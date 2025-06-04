@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import dynamic from 'next/dynamic';
 import DataTable from '@/components/DataTable';
@@ -10,7 +10,7 @@ const MapComponent = dynamic(() => import('@/components/MapComponent'), {
   loading: () => <div className="h-[500px] bg-gray-100 animate-pulse rounded-lg" />
 });
 
-export default function Home() {
+function HomeContent() {
   const searchParams = useSearchParams();
   const [data, setData] = useState<any[]>([]);
   const [countrySummary, setCountrySummary] = useState<any[]>([]);
@@ -112,5 +112,18 @@ export default function Home() {
         )}
       </div>
     </main>
+  );
+}
+
+export default function Home() {
+  return (
+    <Suspense fallback={<div className="min-h-screen bg-gray-50 flex items-center justify-center">
+      <div className="text-center">
+        <div className="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-blue-500"></div>
+        <p className="mt-4 text-gray-600">Loading...</p>
+      </div>
+    </div>}>
+      <HomeContent />
+    </Suspense>
   );
 }
