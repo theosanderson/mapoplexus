@@ -24,3 +24,37 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* Make Leaflet popup container pass through mouse events */
+.leaflet-popup-pane {
+  pointer-events: none;
+}
+
+/* But keep popup content interactive */
+.leaflet-popup {
+  pointer-events: none;
+}
+
+/* Prevent popup from interfering with map interaction */
+.leaflet-popup-content-wrapper {
+  pointer-events: none;
+}
+
+.leaflet-popup-tip-container {
+  pointer-events: none;
+}
+
+/* Custom styling for country popups */
+.country-popup .leaflet-popup-content-wrapper {
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  border-radius: 6px;
+  padding: 2px;
+}
+
+.country-popup .leaflet-popup-content {
+  margin: 8px 12px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #333;
+}
