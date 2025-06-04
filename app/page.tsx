@@ -66,8 +66,8 @@ function HomeContent() {
         
         {!searchParams.get('url') && (
           <div className="bg-yellow-100 border-l-4 border-yellow-500 text-yellow-700 p-4 mb-8">
-            <p className="font-bold">No URL provided</p>
-            <p>Please provide a URL parameter with the data source.</p>
+            <p className="font-bold">No dataset selected</p>
+            <p>Please visit <a href="https://pathoplexus.org" className="underline hover:text-yellow-800" target="_blank" rel="noopener noreferrer">Pathoplexus</a> and access Mapoplexus through the Tools menu on an organism.</p>
           </div>
         )}
 
@@ -111,6 +111,15 @@ function HomeContent() {
           </>
         )}
       </div>
+      
+      <footer className="bg-gray-100 text-gray-500 py-4 mt-12 border-t border-gray-200">
+        <div className="container mx-auto px-4 text-center">
+          <p className="text-sm">
+            Mapoplexus is an external tool not an official Pathoplexus output. 
+            All data are subject to the Pathoplexus terms of use: the data shown here comprises both Restricted and Open sequences.
+          </p>
+        </div>
+      </footer>
     </main>
   );
 }

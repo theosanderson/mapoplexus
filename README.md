@@ -1,36 +1,87 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Mapoplexus
 
-## Getting Started
+A simple geospatial visualization tool for Pathoplexus data.
 
-First, run the development server:
+## Overview
+
+Mapoplexus is a web application that provides interactive map-based visualization of genomic data from [Pathoplexus](https://pathoplexus.org). It displays sample counts by country and allows users to explore detailed data for each geographic location.
+
+## Features
+
+- Interactive world map showing sample distribution by country
+- Click on countries to view detailed sample data
+- Data table with sortable columns for exploring individual samples
+- Responsive design that works on desktop and mobile devices
+
+## Usage
+
+Mapoplexus is designed to be accessed through the Pathoplexus platform:
+
+1. Visit [Pathoplexus](https://pathoplexus.org)
+2. Navigate to an organism dataset
+3. Access Mapoplexus through the Tools menu
+
+The application will receive the dataset URL as a parameter and automatically fetch and visualize the data.
+
+## Technology Stack
+
+- **Next.js 15** - React framework for production
+- **React 19** - UI library
+- **TypeScript** - Type-safe development
+- **Tailwind CSS** - Utility-first CSS framework
+- **Mapbox GL JS** - Interactive map visualization
+- **D3.js** - Data visualization (color scales)
+
+## Development
+
+### Prerequisites
+
+- Node.js 18+ 
+- npm or yarn
+
+### Installation
+
+```bash
+npm install
+```
+
+### Running locally
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+The application will be available at `http://localhost:3000`
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Building for production
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+```
 
-## Learn More
+### Starting production server
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+npm start
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Project Structure
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```
+mapoplexus/
+├── app/                    # Next.js app directory
+│   ├── api/               # API routes
+│   │   └── fetch-data/    # Data fetching endpoint
+│   ├── page.tsx           # Main page component
+│   └── layout.tsx         # Root layout
+├── components/            # React components
+│   ├── DataTable.tsx      # Sample data table
+│   └── MapComponent.tsx   # Interactive map
+├── public/                # Static assets
+│   └── countries.geojson  # Country boundaries
+└── package.json           # Dependencies and scripts
+```
 
-## Deploy on Vercel
+## License
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+MIT
