@@ -116,7 +116,7 @@ function HomeContent() {
         <div className="container mx-auto px-4 text-center">
           <p className="text-sm">
             Mapoplexus is an external tool not an official Pathoplexus output. 
-            All data are subject to the Pathoplexus terms of use: the data shown here comprises both Restricted and Open sequences.
+            All data are subject to the Pathoplexus terms of use: the data shown here may comprise both Restricted and Open sequences.
           </p>
         </div>
       </footer>
