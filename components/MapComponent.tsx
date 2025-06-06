@@ -38,7 +38,7 @@ const MapComponent: React.FC<MapProps> = ({ countrySummary, onCountryClick }) =>
   }, [countrySummary]);
 
   useEffect(() => {
-    fetch('/countries-simplified.geojson')
+    fetch('/custom.geo-midi.json')
       .then(res => res.json())
       .then(data => {
         // Add count data to features
